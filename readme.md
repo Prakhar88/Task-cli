@@ -3,7 +3,6 @@
 A simple command-line task tracker built in Python.
 
 This project is my implementation of the Task Tracker project from roadmap.sh. It allows users to create, update, delete, and manage tasks directly from the terminal while storing all task data in a JSON file.
-
 ## Features
 
 * Add tasks
@@ -11,7 +10,7 @@ This project is my implementation of the Task Tracker project from roadmap.sh. I
 * Delete tasks
 * Mark tasks as:
 
-  * Todo
+  * To-Do
   * In Progress
   * Done
 * List all tasks
@@ -19,7 +18,9 @@ This project is my implementation of the Task Tracker project from roadmap.sh. I
 * Automatic task ID generation
 * Persistent storage using JSON
 * Creation and last-updated timestamps
+* Human-readable status display
 * Automatic creation and validation of `data.json`
+
 
 ---
 
@@ -131,16 +132,17 @@ python3 Task-cli.py list in-progress
 ```
 
 ---
-
 ## Example Output
 
 ```text
+========================Task=========================
 Title:Buy groceries
-Progress:d
+Progress:Done
 Created At:Sat May 30 23:50:29 2026
 Updated At:Sat May 30 23:51:32 2026
 =======================End Of Task=========================
 ```
+
 
 ---
 
@@ -160,14 +162,18 @@ Example:
     ]
 }
 ```
-
 ### Status Codes
 
-| Code | Meaning     |
+Internally, tasks use the following status codes:
+
+| Code | Status      |
 | ---- | ----------- |
-| t    | Todo        |
+| t    | To-Do       |
 | ip   | In Progress |
 | d    | Done        |
+
+When tasks are displayed, the codes are automatically converted into human-readable status names.
+
 
 ---
 

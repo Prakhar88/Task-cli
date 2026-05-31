@@ -71,8 +71,10 @@ class Task:
     @staticmethod
     def display(data):
         for key in data.keys():
+            print("========================Task=========================")
+            Progress={"d":"Done","t":"To-Do","ip":"in-progress"}
             [title,progress,creation,updatedat]=data[key]
-            print(f"Title:{title}\nProgress:{progress}\nCreated At:{time.ctime(creation)}\nUpdated At:{time.ctime(updatedat)}\n=======================End Of Task=========================\n")
+            print(f"Title:{title}\nProgress:{Progress[progress]}\nCreated At:{time.ctime(creation)}\nUpdated At:{time.ctime(updatedat)}\n=======================End Of Task=========================\n")
     @staticmethod
     def mark(id,new_type):
         Types={"in-progress":"ip","done":"d","todo":"t"}
